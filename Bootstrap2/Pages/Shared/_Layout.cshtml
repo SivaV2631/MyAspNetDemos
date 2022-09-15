@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - ECommerce</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+     <!---------------navbar style------------------------->
+
+</head>
+<!-----Head closed------->
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand;  " asp-area="" asp-page="/Index" style="color:yellow" ><iconify-icon icon="simple-icons:flipkart"></iconify-icon> </a>
+                
+                <a class="navbar-brand  " asp-area="" asp-page="/Index " style="color:yellow">Flipkart</a>
+
+                <form>   
+                    <input type="text" placeholder=" Search...." name="search">   
+                    <button type="submit" style="background-color:yellow" class="fa fa-search">Search</button>  
+                </form> 
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!------------------>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+
+                        <!------------------>
+
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About us</a>
+                        </li>
+                        <li class="nav-item dropdown bg-priamary text-dark">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu bg-warning">
+                                <a class="dropdown-item"
+                                   asp-area="ShopMgmt" asp-controller="Categories" asp-action="Index">Categories</a>
+                                <a class="dropdown-item"
+                                   asp-area="ShopMgmt" asp-controller="Books" asp-action="Index">Books</a>
+                                     <a class="dropdown-item"
+                                   asp-area="ShopMgmt" asp-controller="Groceries" asp-action="index">Groceries</a>
+                                     <a class="dropdown-item"
+                                   asp-area="ShopMgmt" asp-controller="Products" asp-action="Index">Products</a>
+                            </div>
+                        </li>
+                      
+                    </ul>
+                      <!---------------------------------------->
+
+                </div>
+            </div>
+        </nav>
+        
+
+ <!--------------NAV BAR closed-------------------------->
+    </header>
+    <div class="container-fluid " style="width:auto; max-height;" >
+        <main role="main" class="pb-3" style="width:auto">
+          
+            @RenderBody()
+        </main>
+    </div>
+<!--------------------------footer------------------------------------------------------>
+<footer class="footer ">
+ 
+ <div class="container-fluid bg-dark text-white flex-grow-0">
+            &copy; 2022 - Flipkart - <a asp-area="" asp-page="/Privacy">Privacy</a>
+           @* <div class="row">
+                <div class="card-columns col-sm-4">
+                <p>Contact Us<br />
+                     Terms of Use<br />
+                     Help Center<br />
+                     Social<br />
+                     FAQ <br />
+                </p>
+                </div>
+            </div>*@
+            
+            
+        </div>
+    </footer>
+    <!----------------------------------------Footer Closed------------------------------------------------------------->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

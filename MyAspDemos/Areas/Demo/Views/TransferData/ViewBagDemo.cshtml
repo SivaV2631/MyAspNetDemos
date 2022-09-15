@@ -1,0 +1,29 @@
+﻿@{
+    // NOTE: Dynamic Type : At runtime resolves the data-type.  So no need to unbox.
+    string name = ViewBag.Name.ToUpper();
+}
+
+<h1>Transfer Data from Controller to the View using ViewBag</h1>
+
+<p>Received Name: @ViewBag.Name</p>
+<p>Name: @name</p>
+
+<p>Received SomeData:</p>
+<ul>
+    @foreach(string s in ViewBag.SomeData) 
+    {
+        <li> @s </li>
+    }
+</ul>
+
+<hr />
+<h3>ViewBag</h3>
+<ul>
+    <li>ViewBag is used to pass data from Controller to View.</li>
+    <li>Once the data is passed from the Controller to the View, it becomes null. Short life.</li>
+    <li>
+        Since the ViewBag is a Dynamic Type, it does not require unboxing (i.e., typecasting).
+        <br />
+        Eg: @name;
+    </li>
+</ul>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Bootstrap2.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="card-columns bg-warning">
+    @foreach (var product in Model) {
+        <div class="card">
+            <div class="card-header">
+                @product.ProductName
+            </div>
+            <div class="card-body bg-primary">
+                @Html.DisplayNameFor(modelItem => product.Category.CategoryName) : @product.Category.CategoryName
+                <br />
+                @Html.DisplayNameFor(modelItem => product.ProductPrice) : @product.ProductPrice
+                <br />
+                @Html.DisplayNameFor(modelItem => product.ProductDescription) : @product.ProductDescription
+                <br/>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-sm btn-danger" asp-action="Edit" asp-route-id="@product.ProductId">Edit</a>
+                <a class="btn btn-sm btn-warning" asp-action="Details" asp-route-id="@product.ProductId">Details</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@product.ProductId">Delete</a>
+            </div>
+        </div>
+    }
+</div>

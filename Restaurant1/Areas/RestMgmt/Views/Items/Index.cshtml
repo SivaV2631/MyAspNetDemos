@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Restaurant1.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a>
+                    |
+                    <a asp-action="Details" asp-route-id="@item.ItemId">Details</a>
+                    |
+                    <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+<div class="card-columns">
+    @foreach (var item in Model) {
+        <div class="card border-success">
+            <div class="card-header">
+                @item.ItemName
+            </div>
+            <div class="card-body">
+                @Html.DisplayNameFor(modelItem => item.Category.CategoryName) : @item.Category.CategoryName
+                <br />
+                @Html.DisplayNameFor(modelItem => item.ItemName) : @item.ItemName
+                <br />
+                @Html.DisplayNameFor(modelItem => item.ItemPrice) : @item.ItemPrice
+                 <br />
+                @Html.DisplayNameFor(modelItem => item.ItemQuantity) : @item.ItemQuantity
+
+
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-sm btn-success" asp-action="Edit" asp-route-id="@item.ItemId">Edit</a>
+                <a class="btn btn-sm btn-outline-primary" asp-action="Details" asp-route-id="@item.ItemId">Details</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+<a asp-area="RestMgmt" asp-controller="Categories" asp-action="Index">List of Categories</a>

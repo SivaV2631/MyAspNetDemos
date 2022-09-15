@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=3.0" />
+    <title>@ViewData["Title"] - ECommerce</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand  " asp-area="" asp-page="/Index" style="color:yellow"><iconify-icon icon="simple-icons:flipkart"></iconify-icon></a>
+                <a class="navbar-brand  " asp-area="" asp-page="/Index " style="color:yellow">Flipkart</a>
+
+<form>   
+<input type="text" placeholder=" Search...." name="search">   
+<button type="submit">Search</button>  
+</form> 
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!------------------>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+
+                        <!------------------>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Error">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"
+                                   asp-area="LibMgmt" asp-controller="Categories" asp-action="Index">Categories</a>
+                                <a class="dropdown-item"
+                                   asp-area="LibMgmt" asp-controller="Books" asp-action="Index">Books</a>
+                            </div>
+                        </li>
+                        <!---------------------------------------->
+                    </ul>
+ <!---------------------------------------->
+                     <style>  
+.container {  
+float: left;  
+}  
+input[type=text] {  
+padding: 6px;  
+margin-top: 8px;  
+font-size: 17px;  
+border: none;  
+}  
+.container button {  
+  
+padding: 8px;  
+margin-top: 10px;  
+margin-left: 10px;  
+background: yellow;  
+font-size: 15px;  
+border: none;  
+cursor: pointer;  
+}  
+.container button:hover {  
+background: blue;  
+}  
+</style> 
+ <!---------------------------------------->
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" >
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container"  height: 50px  width: 50%>
+
+            &copy; 2022 - Flipkart - <a asp-area="" asp-page="/Privacy">About Us</a>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

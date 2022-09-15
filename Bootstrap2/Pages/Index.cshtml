@@ -1,0 +1,111 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!--------------------------------------slider images------------------------------>
+
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+<div class="container-fluid mt-3">
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="~/lib/img1.png" alt="image 1" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="~/lib/img2.png" alt="image 2" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="~/lib/img3.png" alt="image 3" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+</div>
+<!-------------------------closed slider images-------------------------------------------------->
+<div class="container">
+    <div class="card-group">
+        <div class="card-columns  ">
+        <div class="card" style="width:400px">
+    <img class="card-img-top" src="~/lib/img4.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="https://www.flipkart.com" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+  </div>
+
+    <div class="card" style="width:400px">
+    <img class="card-img-top" src="~/lib/img5.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="https://www.flipkart.com" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+  </div>
+    <div class="card" style="width:400px">
+    <img class="card-img-top" src="~/lib/img6.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="https://www.flipkart.com" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+       <div class="card" style="width:400px">
+    <img class="card-img-top" src="~/lib/img7.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="https://www.flipkart.com" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="~/lib/img8.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="https://www.flipkart.com" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+

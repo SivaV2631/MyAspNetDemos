@@ -1,0 +1,51 @@
+﻿@{
+    // NOTE: Need to unbox before consumption.
+
+    // string name = (string)ViewData["Name"];
+    // name = name.ToUpper();
+
+    string name = (ViewData["Name"] as string).ToUpper();
+}
+
+<h1>Transfer Data from Controller to the View using ViewData</h1>
+
+<p>Received Name: @ViewData["Name"] (using ViewData)</p>
+<p>Received Name: @ViewBag.Name (using ViewBag)</p>
+
+<p>Name: @name</p>
+
+<p>Received SomeData: (using ViewData)</p>
+<ul>
+    @foreach (string s in (ViewData["SomeData"] as string[]))
+    {
+        <li> @s </li>
+    }
+</ul>
+
+<p>Received SomeData: (using ViewBag)</p>
+<ul>
+    @foreach (string s in ViewBag.SomeData)
+    {
+        <li> @s </li>
+    }
+</ul>
+
+
+<hr />
+<h3>ViewData</h3>
+<ul>
+    <li>Used for sending information from Controller to Views</li>
+    <li>Once information is sent from Controller to View, it becomes null.</li>
+    <li>
+        ViewData is derived from the <b>ViewDataDictionary</b> Type (a dictionary type)
+        <ol>
+            <li>ViewData uses Key-Value pair for storing and retrieving information</li>
+            <li>It is a Dynamic Type</li>
+            <li>
+                However, you would need to unbox (by explicit typecasting) for processing the value.
+                <br />
+                Eg: @name;
+            </li>
+        </ol>
+    </li>
+</ul>

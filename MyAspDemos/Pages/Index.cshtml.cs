@@ -12,14 +12,18 @@ namespace MyAspDemos.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+            public string MyName { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+            MyName = "Siva";
         }
-
         public void OnGet()
         {
 
         }
+
+
     }
 }

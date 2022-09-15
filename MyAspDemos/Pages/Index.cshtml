@@ -1,10 +1,46 @@
 ﻿@page
 @model IndexModel
 @{
+    // This is the Razor Page File!!!
+    // It refers to the Model defined in the Razor Page Code File.
+
     ViewData["Title"] = "Home page";
+    Model.MyName = Model.MyName.ToUpper();
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p> by - @Model.MyName </p>
 </div>
+
+@* Server-side Comments (they are not renderred in the browser) *@
+<ul>
+    @for(int i = 0; i < 5; i++) {                   // C#
+        <li>Point #i</li>                           <!-- HTML -->
+    }
+</ul>
+
+<ul>
+    @for (int i = 0; i < 5; i++)
+    {
+        <li>Point <b>#@(i + 1)</b></li>               <!-- html with C# inlined -->
+    }
+</ul>
+
+<ul>
+    @for (int i = 0; i < 5; i++)
+    {
+        string s = $"Point <b>{i + 1}</b>";             // C#
+        <li>@s</li>                                     <!-- html with C# inlined -->
+    }
+</ul>
+
+
+<ul>
+    @for (int i = 0; i < 5; i++)
+    {
+        string s = $"Point <b>{i + 1}</b>";             
+        <li>@Html.Raw(s)</li>                           <!-- HTML Helper to render the HTML content! -->
+    }
+</ul>

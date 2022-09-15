@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Bootstrap2.Models.Grocery>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="card-columns bg-info">
+    @foreach (var grocery in Model) {
+        <div class="card ">
+            <div class="card-header">
+                @grocery.GroceryName
+            </div>
+            <div class="card-body bg-warning">
+                @Html.DisplayNameFor(modelItem => grocery.Category.CategoryName) : @grocery.Category.CategoryName
+                <br />
+                @Html.DisplayNameFor(modelItem => grocery.NumberOfItems) : @grocery.NumberOfItems
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-sm btn-success" asp-action="Edit" asp-route-id="@grocery.GroceryId">Edit</a>
+                <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@grocery.GroceryId">Details</a>
+                <a class="btn btn-sm btn-success" asp-action="Delete" asp-route-id="@grocery.GroceryId">Delete</a>
+            </div>
+        </div>
+    }
+</div>

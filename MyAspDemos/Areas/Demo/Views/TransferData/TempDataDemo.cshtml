@@ -1,0 +1,37 @@
+﻿@{
+    // NOTE: Need to unbox before consumption.
+
+    string country = string.Empty;
+    
+    // Check for NON-NULL value before consumption
+    if(TempData["Country"] != null)
+    {
+        country = (TempData["Country"] as string).ToUpper();
+    }
+     
+}
+
+<h1>Transfer Data from Controller to the View using TempData (via other action methods!)</h1>
+
+<p>Received Country: @TempData["Country"]</p>
+
+<p>Country: @country</p>
+
+
+
+<hr />
+<h3>TempData</h3>
+<ul>
+    <li>TempData is used to <u>transfer data from one Action method into another Action method</u> (It is a server-side transfer.). </li>
+    <li>
+        Salient Features:
+        <ul>
+            <li>TempData is also a dictionary object.</li>
+            <li>It stores information in key-value pairs.</li>
+            <li>It is derived from the <b>TempDataDictionary</b> type.</li>
+        </ul>
+    </li>
+    <li>TempData is alive in two subsequent requests ONLY. Use <b>TempData.Keep()</b> for the third request.</li>
+    <li>You must check for null before using TempData in order to avoid a Runtime Error.</li>
+    <li>TempData internally uses the Session Object to store the data.</li>
+</ul>
