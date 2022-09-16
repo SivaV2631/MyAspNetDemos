@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using MyAspDemos.Models;
 namespace MyAspDemos.Areas.LibMgmt.Controllers
 {
     [Area("LibMgmt")]
+    [Authorize(Roles = "LibraryAdmin")]     // check if user has logged in, and is a User with Admin Role
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;

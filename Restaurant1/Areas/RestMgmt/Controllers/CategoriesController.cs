@@ -72,7 +72,7 @@ namespace Restaurant1.Areas.RestMgmt.Controllers
             bool duplicateExists = _context.Categories.Any(c => c.CategoryName == category.CategoryName);
             if (duplicateExists)
             {
-                ModelState.AddModelError("CustomerName", "Duplicate Customer Found!");
+                ModelState.AddModelError("CategoryName", "Duplicate Category Found!");
             }
             if (ModelState.IsValid)
             {

@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using MyAspDemos.Models.Enums;
 
 namespace MyAspDemos.Areas.Identity.Pages.Account
 {
@@ -79,6 +80,10 @@ namespace MyAspDemos.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+
+                    // Add the User to the Default Role for the user
+                    await _userManager.AddToRoleAsync(user, MyIdentityRoleNames.LibraryMember.ToString());
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

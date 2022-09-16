@@ -1,14 +1,27 @@
-﻿@model IEnumerable<MyAspDemos.Models.Book>
+﻿@using Microsoft.AspNetCore.Identity
+@using MyAspDemos.Models.Enums
+@model IEnumerable<MyAspDemos.Models.Book>
+
+@inject UserManager<IdentityUser> _userManager
 
 @{
     ViewData["Title"] = "Index";
+     var user = await _userManager.GetUserAsync(this.User);
+    var isAdmin = await _userManager.IsInRoleAsync(user, MyIdentityRoleNames.LibraryAdmin.ToString());
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (isAdmin)
+    {
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    }
+    else {
+        <a class="btn btn-primary disabled" href="#">Create New</a>
+    }
 </p>
+
 <table class="table">
     <thead>
         <tr>

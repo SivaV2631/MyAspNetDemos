@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Restaurant.Models.Waiter>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WaiterName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaiterName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WaiterId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WaiterId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WaiterId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+<div class="card-columns">
+    @foreach(var item in Model)
+    {
+        <div class="card border-secondary">
+            <div class="card-header">
+                @Html.DisplayNameFor(item =>item.WaiterId) : @item.WaiterId
+                </div>
+                  <div class="card-body">
+                @Html.DisplayNameFor(item => item.WaiterName) :@item.WaiterName
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.WaiterId" >Edit</a>
+                <a class="btn btn-sm btn-success" asp-action="Details" asp-route-id="@item.WaiterId" >Details</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.WaiterId" >Delete</a>
+
+            </div>
+            </div>
+    }
+</div>
+<div>
+<a class="btn btn-sm btn-primary" asp-area="RestMgmt" asp-controller="Categories" asp-action="Index">List of Categories</a> |
+ <p><a class="btn btn-sm btn-primary" href="/">Home</a></p>
+</div>

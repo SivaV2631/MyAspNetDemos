@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Restaurant.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PaymentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PaymentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card border-success">
+                 <div class="card-header">
+                        @Html.DisplayNameFor(modelItem => item.PaymentId) :@item.PaymentId
+                  </div>
+                        <div class="card-body">
+                            @Html.DisplayNameFor(modelItem => item.PaymentType) : @item.PaymentType
+                            <br />
+                       
+                        </div>
+                    <div class="card-footer">
+                        <a class="btn btn-sm btn-success" asp-action="Edit" asp-route-id="@item.PaymentId">Edit</a>
+                        <a class="btn btn-sm btn-outline-primary" asp-action="Details" asp-route-id="@item.PaymentId">Details</a>
+                         <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>
+                    </div>
+         </div>
+    }
+</div>
+<div>
+<a class="btn btn-sm btn-primary" asp-area="RestMgmt" asp-controller="Categories" asp-action="Index">List of Categories</a> |
+ <p><a class="btn btn-sm btn-primary" href="/">Home</a></p>
+</div>

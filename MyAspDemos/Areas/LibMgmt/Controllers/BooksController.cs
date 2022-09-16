@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +13,7 @@ using MyAspDemos.Models;
 namespace MyAspDemos.Areas.LibMgmt.Controllers
 {
     [Area("LibMgmt")]
+    [Authorize]                             // check if the user has logged in.
     public class BooksController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,6 +24,7 @@ namespace MyAspDemos.Areas.LibMgmt.Controllers
         }
 
         // GET: LibMgmt/Books
+
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Books.Include(b => b.Category);
@@ -58,6 +62,7 @@ namespace MyAspDemos.Areas.LibMgmt.Controllers
         }
 
         // GET: LibMgmt/Books/Create
+        [Authorize(Roles = "LibraryAdmin")]
         public IActionResult Create()
         {
 
@@ -68,6 +73,8 @@ namespace MyAspDemos.Areas.LibMgmt.Controllers
         // POST: LibMgmt/Books/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [Authorize(Roles = "LibraryAdmin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BookId,BookTitle,NumberOfCopies,IsEnabled,CategoryId")] Book book)
@@ -137,6 +144,7 @@ namespace MyAspDemos.Areas.LibMgmt.Controllers
         }
 
         // GET: LibMgmt/Books/Delete/5
+        [Authorize(Roles = "LibraryAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -156,8 +164,11 @@ namespace MyAspDemos.Areas.LibMgmt.Controllers
         }
 
         // POST: LibMgmt/Books/Delete/5
+
+        [Authorize(Roles = "LibraryAdmin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var book = await _context.Books.FindAsync(id);
