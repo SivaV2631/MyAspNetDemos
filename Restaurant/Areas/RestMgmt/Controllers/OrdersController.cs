@@ -66,17 +66,18 @@ namespace Restaurant.Areas.RestMgmt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderId,OrderType,OrderDate,OrderAmount,TermsandConditions,ItemId,PaymentId,CustomerId,TableId")] Order order)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail", order.CustomerId);
-            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "ItemName", order.ItemId);
-            ViewData["PaymentId"] = new SelectList(_context.Payments, "PaymentId", "PaymentType", order.PaymentId);
-            ViewData["TableId"] = new SelectList(_context.Tables, "TableId", "TableId", order.TableId);
-            return View(order);
+
+                if (ModelState.IsValid)
+                {
+                    _context.Add(order);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerEmail", order.CustomerId);
+                ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "ItemName", order.ItemId);
+                ViewData["PaymentId"] = new SelectList(_context.Payments, "PaymentId", "PaymentType", order.PaymentId);
+                ViewData["TableId"] = new SelectList(_context.Tables, "TableId", "TableId", order.TableId);
+                return View(order);
         }
 
         // GET: RestMgmt/Orders/Edit/5

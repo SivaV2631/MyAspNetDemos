@@ -73,7 +73,8 @@
                  <br />
                 @Html.DisplayNameFor(modelItem => item.ItemQuantity) : @item.ItemQuantity
                  <br />
-                @Html.DisplayNameFor(modelItem => item.TotalAmount) : @item.TotalAmount
+                @{ var total = item.ItemPrice * item.ItemQuantity; }
+                @Html.DisplayNameFor(modelItem => item.TotalAmount) : @total
 
 
             </div>
