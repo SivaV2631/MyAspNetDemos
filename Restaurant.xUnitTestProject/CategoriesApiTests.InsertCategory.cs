@@ -2,18 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using MyAspDemos.Controllers;
-using MyAspDemos.Models;
+using Restaurant.Controllers;
+using Restaurant.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-
-
-
-namespace MyAspDemos.xUnitTestProject
-
+namespace Restaurant.xUnitTestProject
 {
 
     /// <remarks>
@@ -36,15 +32,9 @@ namespace MyAspDemos.xUnitTestProject
 
     ///     - EF Core DataAnnotation Validations are not supported.
 
-    /// </remarks>
-
-
-
-
+    /// </remarks> 
     public partial class CategoriesApiTests
-
     {
-
         [Fact]
 
         public void InsertCategory_OkResult()
@@ -132,9 +122,6 @@ namespace MyAspDemos.xUnitTestProject
             Assert.Equal(categoryToAdd.CategoryId, actualCategory.CategoryId);
 
             Assert.Equal(categoryToAdd.CategoryName, actualCategory.CategoryName);
-
         }
-
     }
-
 }
