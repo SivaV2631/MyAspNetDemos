@@ -28,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant", "Restaurant\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAspDemos.xUnitTestProject", "MyAspDemos.xUnitTestProject\MyAspDemos.xUnitTestProject.csproj", "{AF5823CC-3E96-44C2-8704-F59E7C44DBF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.xUnitTestProject", "Restaurant.xUnitTestProject\Restaurant.xUnitTestProject.csproj", "{E396A433-E54D-4110-AA5F-389BDFC7B53F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.xUnitTestProject", "Restaurant.xUnitTestProject\Restaurant.xUnitTestProject.csproj", "{E396A433-E54D-4110-AA5F-389BDFC7B53F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
