@@ -1,0 +1,59 @@
+﻿@model IEnumerable<JobPortal.Models.WorkExperience>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToYear)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WorkExperienceId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WorkExperienceId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WorkExperienceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
