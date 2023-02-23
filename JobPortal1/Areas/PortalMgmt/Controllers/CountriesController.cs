@@ -1,0 +1,151 @@
+﻿using JobPortal1.Data;
+using JobPortal1.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace JobPortal1.Areas.PortalMgmt.Controllers
+{
+    [Area("PortalMgmt")]
+    public class CountriesController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+
+        public CountriesController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: PortalMgmt/Countries
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Countries.ToListAsync());
+        }
+
+        // GET: PortalMgmt/Countries/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var country = await _context.Countries
+                .FirstOrDefaultAsync(m => m.CountryId == id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            return View(country);
+        }
+
+        // GET: PortalMgmt/Countries/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: PortalMgmt/Countries/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("CountryId,CountryName,CountryCode")] Country country)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(country);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(country);
+        }
+
+        // GET: PortalMgmt/Countries/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var country = await _context.Countries.FindAsync(id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+            return View(country);
+        }
+
+        // POST: PortalMgmt/Countries/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("CountryId,CountryName,CountryCode")] Country country)
+        {
+            if (id != country.CountryId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(country);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CountryExists(country.CountryId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(country);
+        }
+
+        // GET: PortalMgmt/Countries/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var country = await _context.Countries
+                .FirstOrDefaultAsync(m => m.CountryId == id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            return View(country);
+        }
+
+        // POST: PortalMgmt/Countries/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var country = await _context.Countries.FindAsync(id);
+            _context.Countries.Remove(country);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CountryExists(int id)
+        {
+            return _context.Countries.Any(e => e.CountryId == id);
+        }
+    }
+}

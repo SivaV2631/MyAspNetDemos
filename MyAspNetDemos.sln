@@ -17,11 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap2", "Bootstrap2\Bo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant1", "Restaurant1\Restaurant1.csproj", "{1D5E3325-DBDB-4829-BA6F-81FA8A09D9AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication2\WebApplication1.csproj", "{5B2B72B6-E0AF-46EC-9368-88CBE80BBAEF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2EE76D68-4389-49BE-935F-C5E2F79BC0B3}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.txt = ReadMe.txt
+		ReadMeAngular.txt = ReadMeAngular.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant", "Restaurant\Restaurant.csproj", "{C459F3F4-B478-4F33-9F02-1549B08C9454}"
@@ -30,9 +29,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAspDemos.xUnitTestProject
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.xUnitTestProject", "Restaurant.xUnitTestProject\Restaurant.xUnitTestProject.csproj", "{E396A433-E54D-4110-AA5F-389BDFC7B53F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal", "JobPortal\JobPortal.csproj", "{D6B25373-53D8-405B-912D-01FE8806923A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobPortal", "JobPortal\JobPortal.csproj", "{D6B25373-53D8-405B-912D-01FE8806923A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyJobPortal", "MyJobPortal\MyJobPortal.csproj", "{87AA42FA-8DA0-49E2-B2BA-929274B100B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyJobPortal", "MyJobPortal\MyJobPortal.csproj", "{7E371871-C397-4757-AF22-1FE141F8F9AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobPortal1", "JobPortal1\JobPortal1.csproj", "{7FF91BD1-A255-41EB-BC6B-F1F7B1B776FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobPortal2", "JobPortal2\JobPortal2.csproj", "{51FE290E-7847-4BA4-A1EE-485BF5DF4E50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAngularDemo", "MyAngularDemo\MyAngularDemo.csproj", "{A6552791-B60F-43CB-9AD0-A2C941A5C037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,10 +73,6 @@ Global
 		{1D5E3325-DBDB-4829-BA6F-81FA8A09D9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D5E3325-DBDB-4829-BA6F-81FA8A09D9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D5E3325-DBDB-4829-BA6F-81FA8A09D9AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B2B72B6-E0AF-46EC-9368-88CBE80BBAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B2B72B6-E0AF-46EC-9368-88CBE80BBAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B2B72B6-E0AF-46EC-9368-88CBE80BBAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B2B72B6-E0AF-46EC-9368-88CBE80BBAEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C459F3F4-B478-4F33-9F02-1549B08C9454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C459F3F4-B478-4F33-9F02-1549B08C9454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C459F3F4-B478-4F33-9F02-1549B08C9454}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -88,10 +89,22 @@ Global
 		{D6B25373-53D8-405B-912D-01FE8806923A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6B25373-53D8-405B-912D-01FE8806923A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6B25373-53D8-405B-912D-01FE8806923A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87AA42FA-8DA0-49E2-B2BA-929274B100B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87AA42FA-8DA0-49E2-B2BA-929274B100B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87AA42FA-8DA0-49E2-B2BA-929274B100B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87AA42FA-8DA0-49E2-B2BA-929274B100B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E371871-C397-4757-AF22-1FE141F8F9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E371871-C397-4757-AF22-1FE141F8F9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E371871-C397-4757-AF22-1FE141F8F9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E371871-C397-4757-AF22-1FE141F8F9AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF91BD1-A255-41EB-BC6B-F1F7B1B776FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF91BD1-A255-41EB-BC6B-F1F7B1B776FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF91BD1-A255-41EB-BC6B-F1F7B1B776FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF91BD1-A255-41EB-BC6B-F1F7B1B776FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FE290E-7847-4BA4-A1EE-485BF5DF4E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FE290E-7847-4BA4-A1EE-485BF5DF4E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FE290E-7847-4BA4-A1EE-485BF5DF4E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FE290E-7847-4BA4-A1EE-485BF5DF4E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6552791-B60F-43CB-9AD0-A2C941A5C037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6552791-B60F-43CB-9AD0-A2C941A5C037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6552791-B60F-43CB-9AD0-A2C941A5C037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6552791-B60F-43CB-9AD0-A2C941A5C037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
